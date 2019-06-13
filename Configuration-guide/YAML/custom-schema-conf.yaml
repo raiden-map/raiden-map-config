@@ -1,0 +1,13 @@
+#imageTag: 5.0.1
+replicaCount: 1
+servicePort: 8081
+kafkaStore:
+  overrideBootstrapServers: "PLAINTEXT://raiden-kafka-headless:9092"
+  overrideGroupId: "raiden-sr-group"
+sasl:
+  scram:
+    enabled: false
+kafka:
+  enabled: false
+ingress:
+  enabled: false

@@ -1,0 +1,10 @@
+mysqlRootPassword: raidenMapDB
+mysqlUser: raidenMap
+mysqlPassword: raiden_Map_DB
+mysqlAllowEmptyPassword: true
+initializationFiles:
+  raiden-map-db.sql: |-
+    CREATE SCHEMA IF NOT EXISTS recovery_event;
+    USE recovery_event;
+    CREATE TABLE produced_block ( offset INT8, block_number INT8, event VARCHAR(20));
+    CREATE TABLE token_network (  token_address VARCHAR(44),  token_network_address VARCHAR(44), block_number INT8 );
