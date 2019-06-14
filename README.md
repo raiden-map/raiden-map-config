@@ -27,7 +27,7 @@
         ```bash 
         minikube start --disk-size 50000MB --cpus 4 --memory 4096 
         ```
-        you can set others parameter, see them with:
+        you can set other parameters, see them with:
         ```bash
         minikube start -h
         ```
@@ -37,7 +37,7 @@
 
     For this point you can also read pdf in **Configuration-guide** folder.
 
-    **Remenber**: At every terminal opened you must set docker-env for minikube:
+    **Remember**: At every terminal opened you must set docker-env for minikube:
 
     ```bash
     eval $(minikube docker-env)
@@ -47,25 +47,28 @@
     Open terminal in folder that contains _Dockerfile_ ( you can do 
     <kbd>SHIFT</kbd>+<kbd>F10</kbd> and then <kbd>E</kbd> ) then build the container:
     ```bash
-    docker build -t image-name:image_version .
+    docker build -t image_name:image_version .
     ```
     you can find name and version in .yaml file of the component: 
     ```yaml
     spec: 
         containers: 
-            image: name:version
+            image: image_name:image_version
     ```
-    First time it take some minutes to download all requirements.
+    The first time it takes a few minutes to download all the requirements.
+
     
 4. **Create Raiden Map pods**:
 
-    Now the last, you go in folder that contains .yaml file and run:
+   Now the last one, go to the folder that contains the .yaml file and run:
 
     ```bash
     kubectl create -f my-component.yaml --namespace my-namespace
     ```
-    if all its ok you can see all pods running with:
-    ```bash
+
+   if all ok you can see all the pods that are running with:
+
+   ```bash
     kubectl get pods --namespace my-namespace
     ```
     and see the logs:
